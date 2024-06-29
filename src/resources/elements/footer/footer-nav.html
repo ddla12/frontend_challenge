@@ -1,0 +1,10 @@
+<template bindable="links">
+    <div>
+        <h6>
+            <slot></slot>
+        </h6>
+        <ul>
+            <li repeat.for="link of links">${link}</li>
+        </ul>
+    </div>
+</template>

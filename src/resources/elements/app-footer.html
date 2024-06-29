@@ -1,0 +1,41 @@
+<template>
+    <require from="./app-logo.html"></require>
+    <require from="./footer/footer-nav.html"></require>
+    <require from="./footer/footer-star.html"></require>
+
+    <footer>
+        <div>
+            <nav>
+                <a href="#">A</a>
+                <a href="#">B</a>
+                <a href="#">C</a>
+                <a href="#">D</a>
+            </nav>
+            <hr />
+            <section>
+                <figure>
+                    <app-logo></app-logo>
+                    <figcaption>
+                        support@chicksgold.com
+                    </figcaption>
+                </figure>
+                <nav>
+                   <footer-nav repeat.for="[title, links] of menus" links.bind="links">
+                        ${title}
+                   </footer-nav>
+                </nav>
+                <div class="reviews">
+                    <footer-star></footer-star>
+                    <footer-star></footer-star>
+                    <footer-star></footer-star>
+                    <footer-star></footer-star>
+                    <footer-star></footer-star>
+                    Trust pilot reviews
+                </div>
+            </section>
+            <p>
+                2017 - 2020 © ChicksGold.com. All Rights Reserved.
+            </p>            
+        </div>
+    </footer>
+</template>
