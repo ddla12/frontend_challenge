@@ -1,5 +1,5 @@
 export class AppFooter {
-  menus: Record<string, string[]> = {
+  menus: [string, string[]][] = Object.entries({
     "Chicks Gold": [
       "Games",
       "About Us",
@@ -15,5 +15,5 @@ export class AppFooter {
       "Terms of Services",
       "Copyright Policy",
     ]
-  };
+  });
 }
