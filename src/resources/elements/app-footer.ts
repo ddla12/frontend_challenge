@@ -1,5 +1,5 @@
 export class AppFooter {
-  menus: [string, string[]][] = Object.entries({
+  menus = new Map(Object.entries({
     "Chicks Gold": [
       "Games",
       "About Us",
@@ -15,5 +15,5 @@ export class AppFooter {
       "Terms of Services",
       "Copyright Policy",
     ]
-  });
+  }));
 }

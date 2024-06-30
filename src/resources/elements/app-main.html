@@ -19,7 +19,7 @@
           <main-select></main-select>
         </div>
       </form>
-      <section>
+      <section id="items">
           <article>
             <span>Showing 15 - from 150</span>
             <main-select>
@@ -29,22 +29,22 @@
           <section>
               <app-card repeat.for="card of cards" price.bind="card.price" on-sale.bind="card.onSale"></app-card>
           </section>
-          <nav>
+          <nav id="pagination">
             <button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
               </svg>            
             </button>
             <div>
-              <a href="">1</a>
-              <a href="">2</a>
-              <a href="">3</a>
-              <a href="">4</a>
+              <a href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
               <span>...</span>
-              <a href="">111</a>
+              <a href="#">11</a>
             </div>
             <button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
               </svg>            
             </button>
