@@ -1,6 +1,7 @@
 @import 'modern-normalize/modern-normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* General styles */
 :root {
 	font-family: "Roboto", sans-serif;
 	--primary-color: #303141;
@@ -8,7 +9,7 @@
 	--secondary-color: #3f4254;
 	--info-color: #39e29d;
 	--gray-color: rgb(197, 197, 197);
-	--max-width: 1280px;
+	--max-width: 1440px;
 }
 
 a {
@@ -28,7 +29,7 @@ ul {
 	padding: 0;
 }
 
-figure, h1, h2, h3, h4, h5, h6 {
+figure, h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
 }
 
@@ -53,6 +54,15 @@ button {
 	}
 }
 
+body {
+	background-image: url("/static/0a8e28653c86e9e66867379ccc350ee70284a7f5-1920x1080.jpg");
+	background-size: cover;
+	background-color: #37384b;
+	background-blend-mode: luminosity;
+}
+
+/* Header styles */
+
 header {
 	background-color: var(--primary-color);
 	display: flex;
@@ -60,9 +70,7 @@ header {
 	padding: 1rem 2rem 1rem;
 
 	span {
-		display: inline-flex;
-		flex-grow: 1;
-		justify-content: end;
+		margin-inline-start: auto;
 	}
 
 	a, button {
@@ -72,24 +80,31 @@ header {
 	}
 }
 
-#toggle-nav {
+[id="toggle-nav"] {
 	display: none;
 }
 
 header nav {
-	border-left: 1px solid gray;
-	margin-left: 1rem;
+	border-inline-start: 1px solid gray;
+	margin-inline-start: 1rem;
 	display: flex;
 	align-items: center;
 	gap: 2rem;
 	padding: 0 2rem;
 }
 
+[id="sign-in"] {
+	background-color: var(--info-color);
+	border-radius: .25rem;
+	color: black;
+}
+
+/* Main */
 main {
 	padding: 6rem 1rem;
 	color: white;
-	background-color: #37384b;
-
+	backdrop-filter: blur(5px);
+	
 	> div {
 		margin: auto;
 		max-width: var(--max-width);
@@ -151,81 +166,8 @@ main-select {
 	}
 }
 
-footer {
-	padding: 1rem;
-	color: white;
-	text-align: center;
-	background-color: var(--primary-color);
 
-	> div {
-		max-width: var(--max-width);
-		margin: auto;
-	}
-
-	section {
-		display: flex;
-		padding: 1rem 0;
-		justify-content: space-evenly;
-	}
-
-	section nav {
-		display: flex;
-		gap: 2rem;
-	}
-
-	.reviews {
-		display: flex;
-		column-gap: .25rem;
-		align-items: center;
-		text-wrap: nowrap;
-		font-size: .75rem;
-	}
-}
-
-#social-media {
-	padding: 1rem 0;
-	text-align: start;
-
-	a {
-		display: inline-block;
-		background-color: var(--interactive-color);
-		border-radius: 100%;
-		padding: .5rem;
-	}
-}
-
-footer-nav {
-	font-size: .85rem;
-
-	h6 {
-		font-size: 1em;
-		margin-bottom: 1em;
-	}
-
-	ul {
-		font-size: .75em;
-		list-style: none;
-		color: var(--gray-color);
-		text-align: start;
-	}
-
-	li {
-		margin-bottom: .5em;
-	}
-}
-
-footer-star {
-	background-color: var(--info-color);
-	padding: .15rem;
-}
-
-#sign-in {
-	background-color: var(--info-color);
-	border-radius: .25rem;
-	color: black;
-}
-
-#items {
+[id="items"] {
 	background-color: var(--primary-color);
 	padding: 3rem 2rem;
 
@@ -243,7 +185,7 @@ footer-star {
 	}
 }
 
-#pagination {
+[id="pagination"] {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -274,23 +216,30 @@ footer-star {
 app-card {
 	padding: 1rem;
 	background-color: #323648;
+	box-shadow: 1px 1px 1px 1px rgba(53, 53, 53, 0.726);
 
 	figure {
 		padding: 1rem 0;
 	}
 
 	figcaption {
+		position: relative;
 		font-size: .85rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 	}
 
 	figcaption span:last-child {
+		position: absolute;
+		right: 0;
 		padding: .125rem .75rem;
 		border-radius: 50%;
 		border: 1px solid var(--info-color);
 		color: var(--info-color);
+	}
+
+	.prices {
+		font-weight: 600;
+		margin: 1rem 0;
+		margin-top: .5rem;
 	}
 
 	p {
@@ -303,6 +252,7 @@ app-card .actions {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	font-size: .75rem;
+	margin-top: 1rem;
 	column-gap: .5rem;
 
 	button {
@@ -355,18 +305,101 @@ app-card .controls {
 
 	input {
 		grid-area: input;
-		width: 100%;
 		max-width: 4rem;
 		justify-self: end;
 		background-color: var(--secondary-color);
+	}
+}
+
+/* Footer */
+
+footer {
+	color: white;
+	text-align: center;
+	background-color: var(--primary-color);
+	padding-bottom: 1rem;
+
+	> div {
+		max-width: var(--max-width);
+		margin: auto;
+	}
+
+	.payments {
+		text-align: start;
+		padding: 1rem;
+		background-color: #2b2c3b;
+	}
+
+	.contact {
+		display: flex;
+		padding: 1rem 0;
+		justify-content: space-evenly;
+	}
+
+	.contact nav {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.reviews {
+		display: flex;
+		column-gap: .25rem;
+		align-items: center;
+		text-wrap: nowrap;
+		font-size: .75rem;
+	}
+}
+
+footer .payments > div {
+	max-width: var(--max-width);
+	margin: auto;
+}
+
+
+[id="social-media"] {
+	padding: 1rem;
+	text-align: start;
+
+	a {
+		display: inline-block;
+		background-color: var(--interactive-color);
+		border-radius: 100%;
 		padding: .5rem;
 	}
 }
 
-.icon-button {
-		display: inline-flex;
-		align-items: center;
-		column-gap: .5rem;
+footer-nav {
+	/* Overall text is smaller than the rest of the page */
+	font-size: .85rem;
+
+	h6 {
+		font-size: 1em;
+		margin-bottom: 1em;
+	}
+
+	ul {
+		font-size: .75em;
+		list-style: none;
+		color: var(--gray-color);
+		text-align: start;
+	}
+
+	li {
+		margin-bottom: .5em;
+	}
+}
+
+footer-star {
+	background-color: var(--info-color);
+	padding: .15rem;
+}
+
+/* Utilities */
+
+.button-icon {
+	display: inline-flex;
+	align-items: center;
+	column-gap: .5rem;
 }
 
 .discount {
@@ -376,17 +409,19 @@ app-card .controls {
 	color: var(--gray-color);
 }
 
+/* Media queries */
+
 @media screen and (max-width: 1024px) {
 	main form {
 		flex-direction: column;
 	}
 
-	#items span {
+	[id="items"] span {
 		font-size: .8rem;
 	}
 
 	footer {
-		section {
+		.contact {
 			flex-direction: column;
 			row-gap: 2rem;
 			align-items: center;
@@ -406,7 +441,7 @@ app-card .controls {
 
 		nav {
 			z-index: 2;
-			margin-left: 0;
+			margin-inline-start: 0;
 			display: none;
 			flex-direction: column;
 			position: fixed;
@@ -423,7 +458,7 @@ app-card .controls {
 		}
 	}
 
-	#toggle-nav {
+	[id="toggle-nav"] {
 		display: inline-block;
 
 		svg {
@@ -433,5 +468,11 @@ app-card .controls {
 		&:focus ~ nav {
 			display: flex;
 		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	:root {
+		font-size: 20px;
 	}
 }

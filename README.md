@@ -1,33 +1,17 @@
 # `frontend_challenge`
 
-This project is bootstrapped by [aurelia-cli](https://github.com/aurelia/cli).
+This is a pseudo-clone of the items page of [Chicks Gold Inc](https://chicksgold.com/items). It is made with Aurelia.js with typescript (that was unnecesary though because I'm not even using it).
 
-For more information, go to https://aurelia.io/docs/cli/webpack
+## Tools
 
-## Run dev app
+Regarding the design choices there's not much to say, it's a clone. I use [modern normalize](https://github.com/sindresorhus/modern-normalize) to reset styles, and the font [Roboto](https://fonts.google.com/specimen/Roboto) because I think it's the one that the original page use.
 
-Run `npm start`, then open `http://localhost:8080`
+The CSS convention I use is [ecss](https://ecss.info/en/). Some icons are taken from [Heroicons](https://heroicons.com/). It's worth mentioning I think that both **Heroicons** and **modern normalize** are entities in the TailwindCSS ecosystem. Personally I don't like [Tailwind](https://github.com/tailwindlabs/tailwindcss) but its ecosistem has always cutting on edge technologies.
 
-You can change the standard webpack configurations from CLI easily with something like this: `npm start -- --open --port 8888`. However, it is better to change the respective npm scripts or `webpack.config.js` with these options, as per your need.
+The background image and the card image are assets of League of Legends
 
-To enable Webpack Bundle Analyzer, do `npm run analyze` (production build).
+## Style
 
-To enable hot module reload, do `npm start -- --hmr`.
+I never like to populate HTML with classes. I think CSS selectors are enough for most of the job and using lots of classes make HTML noisy. I like to keep HTML maintainable and semantic as possible. The tree should define the behavior, the elements itself are nothing. There are special cases like `header` and `footer` which doesn't need any more explanations about what they do.
 
-To change dev server port, do `npm start -- --port 8888`.
-
-To change dev server host, do `npm start -- --host 127.0.0.1`
-
-**PS:** You could mix all the flags as well, `npm start -- --host 127.0.0.1 --port 7070 --open --hmr`
-
-For long time aurelia-cli user, you can still use `au run` with those arguments like `au run --env prod --open --hmr`. But `au run` now simply executes `npm start` command.
-
-## Build for production
-
-Run `npm run build`, or the old way `au build --env prod`.
-
-## Unit tests
-
-Run `au test` (or `au jest`).
-
-To run in watch mode, `au test --watch` or `au jest --watch`.
+I try not to write a lot of `@media` queries, that's why I like to use relative units such as `rem` and `em`, and `auto-fit` grids. Flex is another story, I prefer using `flex-column` than wrap because it ensures that each element takes 100% width.
