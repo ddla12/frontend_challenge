@@ -12,6 +12,10 @@ The background image and the card image are assets of League of Legends
 
 ## Style
 
-I never like to populate HTML with classes. I think CSS selectors are enough for most of the job and using lots of classes make HTML noisy. I like to keep HTML maintainable and semantic as possible. The tree should define the behavior, the elements itself are nothing. There are special cases like `header` and `footer` which doesn't need any more explanations about what they do.
+I never like to populate HTML with classes. I think CSS selectors are enough for most of the job and using lots of classes make HTML noisy. I like to keep HTML maintainable and semantic as possible. The tree should define the behavior, the elements itself are nothing. There are special cases like `header` and `footer` which doesn't need any more explanations about what they do. The `div` element is primarily for wrapping.
 
 I try not to write a lot of `@media` queries, that's why I like to use relative units such as `rem` and `em`, and `auto-fit` grids. Flex is another story, I prefer using `flex-column` than wrap because it ensures that each element takes 100% width.
+
+## Run
+
+Clone this repository. When in the root directory run `au run --open` in your terminal
